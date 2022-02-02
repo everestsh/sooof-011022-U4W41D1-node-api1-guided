@@ -59,7 +59,10 @@ server.get('/api/dogs/:id', async (req, res) => {
         res.status(200).json(dog)
         }
     } catch (err) {
-      res.status(500).json({ message: err.message })
+        // if promise were to reject
+        // or if another thing crashed inside the try
+        // then we fall through here
+        res.status(500).json({ message: err.message })
     }
   })
 
