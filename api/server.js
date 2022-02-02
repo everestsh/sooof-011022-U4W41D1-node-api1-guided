@@ -43,8 +43,21 @@ server.get('/api/dogs/:id', async (req, res) => {
     console.log(req.params.id)
     // res.json('test req by endpoint')
     try {
-      const dog = await Dog.findById(req.params.id)
-      res.json(dog)
+        // w 1
+        // const dog = await Dog.findById(req.params.id)
+        // res.json(dog)
+        // w 2
+        //   const { id } = req.params
+        //   const dog = await Dog.findById(id)
+        //   res.status(200).json(dog)
+        // w 3
+        const { id } = req.params
+        const dog = await Dog.findById(id)
+        if (!dog) {
+        res.status(404).json({ message: 'no dog' })
+        } else {
+        res.status(200).json(dog)
+        }
     } catch (err) {
       res.status(500).json({ message: err.message })
     }
