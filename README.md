@@ -45,19 +45,19 @@ Here is a table with the `endpoint` descriptions:
 
 
 ```
-//  node index.js 
-//  npx gitignore node
-//  npm init -y  // creat package.json
-//  npx eslint --init
-//  npm i  nodemon 
-//  npm install express nanoid
+ node index.js 
+ npx gitignore node
+ npm init -y  // creat package.json
+ npx eslint --init
+ npm i  nodemon 
+ npm install express nanoid
 
 
-//  npm i -D nodemon 
+ npm i -D nodemon 
 
 
 
-// curl localhost:9000/hello_world -v
-// brew install httpie
-// http get :9000/hello_world -v
+curl localhost:9000/hello_world -v
+brew install httpie
+http get :9000/hello_world -v
 ```
