@@ -74,10 +74,31 @@ server.get('/api/dogs/:id', async (req, res) => {
 
 // [POST]   /api/dogs     (C of CRUD, create new dog from JSON payload)
 server.post('/api/dogs', async (req, res) => {
-    res.json('test create by endpoint') 
+    // postman test data {"name": "ff", "weight": 6}
+    // http post  :9000/api/dogs name=ff weight=6  -v
+    // res.json('test create by endpoint') 
+    try {
+        const { name, weight } = req.body
+        console.log(name, weight)
+        const newDog = await Dog.create({ name, weight })
+        console.log(newDog)
+        res.status(201).json(newDog) // :(
+      } catch (err) {
+        res.status(500).json({ message: err.message })
+      }
 })
 // [PUT]    /api/dogs/:id (U of CRUD, update dog with :id using JSON payload)
-// [DELETE] /api/dogs/:id (D of CRUD, remove dog with :id)
+server.put('/api/dogs/:id', async (req, res) => {
+// http get :9000/api/dogs  -v  ; to get id
+// http put :9000/api/dogs/sHvJT  -v
+   res.json('test update by endpoint')  
+})
 
+// [DELETE] /api/dogs/:id (D of CRUD, remove dog with :id)
+server.delete('/api/dogs/:id', async (req, res) => {
+    // http get :9000/api/dogs  -v  ; to get id
+    // http delete :9000/api/dogs/sHvJT  -v
+       res.json('test delete by endpoint')  
+    })
 // EXPOSING THE SERVER TO OTHER MODULES
 module.exports = server
