@@ -1,0 +1,23 @@
+{
+  "name": "node-api1-guided",
+  "version": "1.0.0",
+  "description": "Guided project for **Node API 1** Module.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test-git": "git -v",
+    "test-ls": "ls -h"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.6.0",
+    "eslint-plugin-react": "^7.28.0",
+    "nodemon": "^2.0.15"
+  }
+}
